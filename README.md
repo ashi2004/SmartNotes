@@ -184,9 +184,9 @@ TODO: Document main user flows:
 
 TODO: List what developers need installed
 
-- Node.js 18+ / Python 3.9+ / Flutter SDK
+- Node.js 18+
 - npm / yarn / pnpm
-- [Any specific tools or accounts needed]
+- Git
 
 ### Installation
 
@@ -211,7 +211,9 @@ pnpm install
 
 #### 3. Configure Environment Variables(.env.example)
 
-Create a `.env` file in the root directory:
+No environment variables are required for local development by default.
+
+If you add custom integrations later, create a `.env` file in the root directory:
 
 ```env
 # Add your environment variables here
@@ -229,9 +231,30 @@ yarn dev
 pnpm dev
 ```
 
-#### 5. Open your Browser
+This starts the Electron + Vite development environment and opens the desktop app window.
 
-Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+#### 5. Run Preview/Production Build
+
+Preview the built app locally:
+
+```bash
+npm run start
+```
+
+Create distributable builds:
+
+```bash
+npm run build
+npm run build:win
+# or
+npm run build:mac
+# or
+npm run build:linux
+```
+
+#### 6. Launch the App
+
+After running `npm run dev` (or `npm run start`), the Electron desktop app should open automatically.
 
 For detailed setup instructions, please refer to our [Installation Guide](./docs/INSTALL_GUIDE.md) (if you have one).
 
